@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:serenity/themes/apple_dark.dart';
+import 'package:serenity/styles/apple_dark.dart';
 import 'package:serenity/utils/app_routes.dart';
 import 'package:window_manager/window_manager.dart';
 

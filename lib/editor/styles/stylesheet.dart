@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:super_editor/super_editor.dart';
 
-import '../../themes/apple_dark.dart';
+import '../../styles/apple_dark.dart';
 
 Stylesheet buildStylesheet(Stylesheet stylesheet) {
   return stylesheet.copyWith(

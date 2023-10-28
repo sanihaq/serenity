@@ -3,7 +3,6 @@ import 'package:super_editor/super_editor.dart';
 
 class DocumentChangeNotifier extends ValueNotifier<DocumentChangeLog> {
   static final DocumentChangeNotifier _shared = DocumentChangeNotifier._sharedInstance();
-  // singleton
   factory DocumentChangeNotifier() => _shared;
   DocumentChangeNotifier._sharedInstance() : super(DocumentChangeLog([]));
 
