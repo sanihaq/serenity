@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:serenity/models/app_routes.dart';
 import 'package:serenity/themes/apple_dark.dart';
+import 'package:serenity/utils/app_routes.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'scenes/markdown_test_scene.dart';
