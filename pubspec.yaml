@@ -48,6 +48,7 @@ dependencies:
   window_manager: ^0.3.7
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
   flutter_test:
     sdk: flutter
 
@@ -116,3 +117,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_launcher_icons:
+  macos:
+    generate: true
+    image_path: "assets/serenity-logo/serenity-icon-512.png"
