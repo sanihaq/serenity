@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:serenity/editor/app_editor.dart';
 import 'package:serenity/markdown/markdown_serializer.dart';
 import 'package:serenity/utils/exceptions/not_found_exception.dart';
 import 'package:super_editor/super_editor.dart';
@@ -12,7 +13,7 @@ class MarkdownDocument extends InheritedWidget {
 
   MarkdownDocument({super.key, required super.child, required this.document})
       : composer = MutableDocumentComposer() {
-    editor = _createDefaultDocumentEditor();
+    editor = AppEditor(document: document, composer: composer).editor;
     document.addListener((changelog) {
       DocumentChangeNotifier().change(changelog);
     });
@@ -24,24 +25,11 @@ class MarkdownDocument extends InheritedWidget {
   @override
   bool updateShouldNotify(InheritedWidget oldWidget) => true;
 
-  Editor _createDefaultDocumentEditor() {
-    final editor = Editor(
-      // cSpell:ignore editables
-      editables: {
-        Editor.documentKey: document,
-        Editor.composerKey: composer,
-      },
-      requestHandlers: List.from(defaultRequestHandlers),
-      reactionPipeline: List.from(defaultEditorReactions),
-    );
-
-    return editor;
-  }
-
   static MarkdownDocument of(BuildContext context) {
     final doc = context.dependOnInheritedWidgetOfExactType<MarkdownDocument>();
     if (doc == null) {
-      throw NotFoundException('No parent `MarkdownDocument` found in tree stack.');
+      throw NotFoundException(
+          'No parent `MarkdownDocument` found in tree stack.');
     }
 
     return doc;

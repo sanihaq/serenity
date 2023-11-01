@@ -2,10 +2,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:super_editor/super_editor.dart';
 
-import '../../styles/apple_dark.dart';
+import '../../../styles/apple_dark.dart';
 
-class ListItemCustomComponentBuilder extends ListItemComponentBuilder {
-  const ListItemCustomComponentBuilder();
+class UnorderedListItemCustomConversion
+    extends UnorderedListItemConversionReaction {
+  static final _unorderedListItemPattern = RegExp(r'^\s*[-]\s+$');
+  const UnorderedListItemCustomConversion() : super();
+
+  @override
+  RegExp get pattern => _unorderedListItemPattern;
+}
+
+class ListIteComponentCustomBuilder extends ListItemComponentBuilder {
+  const ListIteComponentCustomBuilder();
 
   @override
   Widget? createComponent(
