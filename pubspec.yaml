@@ -46,6 +46,8 @@ dependencies:
       path: super_text_layout
   markdown: ^4.0.1
   window_manager: ^0.3.7
+  collection: ^1.17.2
+  logging: ^1.2.0
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1

@@ -26,6 +26,34 @@ Stylesheet buildStylesheet(Stylesheet stylesheet) {
         case 'paragraph':
           return existingStyle.copyWith(color: appleDark.editor.textColor);
 
+        case 'inline-bold-tag':
+          return existingStyle.copyWith(
+            color: const Color(0xFFBAE67E).withOpacity(0.5),
+            fontWeight: FontWeight.bold,
+          );
+        case 'inline-bold-value-tag':
+          return existingStyle.copyWith(
+            color: const Color(0xFFBAE67E),
+            fontWeight: FontWeight.bold,
+          );
+        case 'inline-italic-tag':
+          return existingStyle.copyWith(
+            color: const Color(0xFF95E6CB).withOpacity(0.5),
+            fontStyle: FontStyle.italic,
+          );
+        case 'inline-italic-value-tag':
+          return existingStyle.copyWith(
+            color: const Color(0xFF95E6CB),
+            fontStyle: FontStyle.italic,
+          );
+
+        case 'markdown-inline-tag':
+          return existingStyle.copyWith(
+            fontStyle: FontStyle.italic,
+            fontSize: 22,
+            color: const Color(0xFF95E6CB).withOpacity(0.3),
+          );
+
         default:
           debugPrint('"$attributionType" not implemented');
       }
